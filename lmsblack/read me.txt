@@ -1,0 +1,5 @@
+
+I have provided the admin information for library management system.
+
+Pin: admin
+Password: ADMIN

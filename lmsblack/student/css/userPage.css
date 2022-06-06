@@ -1,0 +1,36 @@
+
+/*------------------------------------------------------------------------------------------------------------/
+/*--------------------------------------BOOK.PHP/QUOTES---------------------------------------------------------------*/
+
+.blockquote{
+	max-width: 680px;
+	margin:10px 30px;
+	padding: 25px;
+	background:#fff;
+	border: 1px solid #e8b048;
+	color:#fffff;
+	box-sizing: border-box;
+}
+
+.blockquote--bordered{
+	border-left-width: 18px;
+	
+}
+
+.blockquote_text{
+	font-family: 'Galesio',serif;
+	font-style: italic;
+	font-size: 20px;
+	line-height: 1.5;
+	margin: 0;
+
+}
+.blockquote_text:not(:last-child){
+	margin-bottom: 1em;
+}
+.blockquote_text_credit{
+	font-weight: bold;
+	font-style: normal;
+	text-align: right;
+
+}

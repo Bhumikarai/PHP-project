@@ -1,0 +1,29 @@
+.card{
+	width: 100%;
+	border: 2px;
+	font-family: "Times New Roman", Times, serif;
+	background: rgb(255, 255, 255);
+}
+
+.card-image-top{
+	text-align: center;
+}
+
+.card-body {
+	padding: 20px;
+	background-color:#D6AD60;
+	text-align: left;
+    color: rgb(0, 0, 0);
+}
+
+.card-body p {
+	font-size: 20px;
+}
+
+.card-body h1 {
+	color: rgb(0, 0, 0);
+}
+
+.card-body b {
+	color: rgb(0, 0 , 0);
+}

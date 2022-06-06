@@ -1,0 +1,275 @@
+/*------------------------------about us--------------------------------*/
+.body-row{
+	min-height: 90vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color:#f7f5f5;	
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-top: 10px;
+}
+.about-section{
+	margin-top: -10px;
+	background: url(img/5.jpg) no-repeat left;
+	background-size:55%;
+	background-color:#D6AD60;
+	overflow: hidden;
+	padding:50px 0;
+}
+.inner-container{
+	width:55%;
+	float: right;
+	background-color:#D6AD60;
+	padding: 50px;
+}
+.inner-container h1{
+	margin-bottom: 30px;
+	font-size: 30px;
+	font-weight: 800;
+}
+.border{
+	height: 4px;
+	width: 150px;
+	background-color:#274728;
+}
+.text{
+	font-size:15px;
+	color: #fffff;
+	line-height: 30px;
+	text-align:justify;
+	margin-bottom: 40px;
+
+}
+@media screen and (max-width:1200px){
+	.inner-container{
+		padding: 80px;
+	}
+}
+
+@media screen and (max-width:1000px){
+	.about-section{
+		background-size: 100%;
+		padding: 100px 40px;
+	}
+	.inner-container{
+		width: 100%;
+	}
+}
+@media screen and (max-width: 600px){
+	.about-section{
+		padding: 0;
+	}
+	.inner-container{
+		padding: 60px;
+	}
+
+}
+/*...................................................about us-2....................*/
+.wrapper-row{
+	margin-top: -50px;
+	background:#f7f5f5;
+	font-family: 'Josefin Sans',sans-serif;
+	min-height: 50vh;
+	
+
+}
+.wrapper{
+	margin-top:5%;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+.wrapper h1{
+	font-family:'Josefin Sans',sans-serif;
+	font-size: 30px;
+	margin-bottom: 60px;
+	text-align: center; 
+	padding-top: 20px;
+}
+.team{
+	display: flex;
+	text-align: center;
+	width: auto;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+.team .team_member{
+	background:#fff;
+	margin:5px;
+	margin-bottom: 50px;
+	width: 300px;
+	padding: 20px;
+	line-height: 20px;
+	color: #8e8b8b;
+	position: relative;
+	border: 0.1rem solid #D6AD60;
+}
+.team .team_member h3{
+	color:black;
+	font-size: 22px;
+	margin-top: 50px;
+}
+.team .team_member p.role{
+	color: #ccc;
+	font-size: 15px;
+	text-transform: uppercase;
+	margin: 12px 0;
+
+}
+.team .team_member .team_img{
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	position: absolute;
+	top: -50px;
+	left:50%;
+	transform: translateX(-50%);
+	background: #D6AD60;
+	
+}
+.team .team_member .team_img img{
+	width: 100px;
+	height: 100px;
+	padding: 10px;
+
+}
+/*--------------------------------------------------about us-Service/ MAJOR PROJECTS-------------------------------------------*/
+.services-section{
+	background-color:#f7f5f5;
+	background-size: cover;
+	padding:60px 0;
+
+}
+.inner-width{
+	width: 100%;
+	max-width: 1200px;
+	margin: auto;
+	padding: 0 20px;
+	overflow: hidden;
+}
+.section-title{
+	text-align: center;
+	color:black;
+	text-transform: upercase;
+	font-size: 30px;
+
+}
+.border-1{
+	width: 160px;
+	height:3px;
+	background: #274728;
+	margin:20px auto;
+}
+
+.service-container{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.service-box{
+	max-width: 33.33%;
+	padding:10px;
+	text-align: center;
+	color: #ddd;
+	cursor: pointer;
+
+}
+.service-icon{
+	display: inline-block;
+	width: 70px;
+	height: 70px;
+	border: 3px solid #D6AD60;
+	color: #D6AD60;
+	transform: rotate(45deg);
+	margin-bottom: 30px;
+	margin-top: 16px;
+	transition: 0.3s linear;
+
+}
+.service-icon i {
+	line-height: 70px;
+	transform: rotate(-45deg);
+	font-size: 26px;
+}
+.service-box:hover .service-icon{
+	background:#274728;
+	border: 3px solid #274728;
+	color:white;
+}
+.service-title{
+	font-size: 18px;
+	text-transform: uppercase;
+	margin-bottom: 10px;
+	color: black;
+	font-weight: bold;
+}
+.service-desc{
+	font-size: 14px;
+	color: black;
+
+}
+@media screen and (max-width:960px){
+	.service-box{
+	max-width: 45%;	
+	}
+}
+@media screen and (max-width:768px){
+	.service-box{
+	max-width: 50%;	
+	}
+}
+@media screen and (max-width:480px){
+	.service-box{
+	max-width: 100%;	
+	}
+}
+
+/*---------------------------------------------------Gallary-------------------------------------*/
+
+
+.subjects .box-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(20rem, 1fr)) [auto-fit];
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 2rem;
+}
+
+.subjects .box-container .box {
+  padding: 3rem 2rem;
+  text-align: center;
+  border: 0.1rem solid #D6AD60;
+  background: #D6AD60;
+  cursor: pointer;
+}
+
+.subjects .box-container .box:hover {
+  background: #274728;
+}
+
+.subjects .box-container .box:hover h3 {
+  color: #fff;
+}
+
+
+.subjects .box-container .box:hover p {
+  color: #eee;
+}
+
+.subjects .box-container .box img {
+  height: 20rem;
+  margin-bottom: 0.7rem;
+}
+
+.subjects .box-container .box h3 {
+  font-size: 1.7rem;
+  text-transform: capitalize;
+  color: #ffff;
+  padding: 0.5rem 0;
+}
+
+.subjects .box-container .box p {
+  font-size: 1.5rem;
+  line-height: 2;
+  color: #777;
+}

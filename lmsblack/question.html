@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<!-- Designed by CodingLab | www.youtube.com/codinglabyt -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!--<title> Responsive FAQ Accordion | CodingLab </title>-->
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="css/question.css">
+    <link rel="stylesheet" href="css/navigation.css">
+    <link rel="stylesheet" href="css/gallary.css">
+    <link rel="stylesheet" href="css/footer.css">
+
+
+   
+    <!-- Boxicons CDN Link -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+<header>
+  <div class="container">
+    <nav>
+      <input type="checkbox" id="show-search">
+      <input type="checkbox" id="show-menu">
+      <label for="show-menu" class="menu-icon"><i class="fas fa-bars"></i></label>
+      <div class="content">
+      <div class="logo"><a href="#">BooKish</a></div>
+        <ul class="links">
+          <li><a href="home.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="question.html">FAQ</a></li>
+           <li><a href="index.php">Login</a></li>
+          
+        </ul>
+      </div>
+      
+    </nav>
+  </div>
+</header>
+
+  <div class="box-container-faq" style="background-color:#F0F0F0">
+  <div class="accordion" style="background-color:#ffff;">
+    <div class="image-box">
+      <img src="img/14.jpg" alt="Accordion Image">
+    </div>
+    <div class="accordion-text">
+      <div class="title"></div>
+    <ul class="faq-text">
+      <li>
+        <div class="question-arrow">
+          <span class="question">Who can borrow ebooks from library?</span>
+          <i class="bx bxs-chevron-down arrow" style="color:#D6AD60"></i>
+        </div>
+        <p>Users of all ages can borrow book from the shelf. </p>
+        <span class="line" style="background-color:#D6AD60"></span>
+      </li>
+      <li>
+        <div class="question-arrow">
+          <span class="question">For how long do I get to read ebook?</span>
+          <i class="bx bxs-chevron-down arrow" style="color:#D6AD60"></i>
+        </div>
+        <p>The library gives all the user to read a book for a month. Then user must return the book.</p>
+        <span class="line" style="background-color:#D6AD60"></span>
+      </li>
+      <li>
+        <div class="question-arrow">
+          <span class="question">What happens if I dont return the ebook in time?</span>
+          <i class="bx bxs-chevron-down arrow" style="color:#D6AD60"></i>
+        </div>
+        <p>If you do not return the book within due date then your email id will be deactivated from the site which will not let you have access to the library. </p>
+        <span class="line" style="background-color:#D6AD60"></span>
+      </li>
+      <li>
+        <div class="question-arrow">
+          <span class="question">Can I search specific book?</span>
+          <i class="bx bxs-chevron-down arrow" style="color:#D6AD60"></i>
+        </div>
+        <p>Yes, you can search book with the book name or id of the book name.</p>
+        <span class="line" style="background-color:#D6AD60"></span>
+      </li>
+      <li>
+        <div class="question-arrow">
+          <span class="question">What if I dont find the book that I need?</span>
+          <i class="bx bxs-chevron-down arrow" style="color:#D6AD60"></i>
+        </div>
+        <p>You can send message so that your book will be added in your next visit.  </p>
+        <span class="line" style="background-color:#D6AD60;height:3px;"></span>
+      </li>
+      <li>
+        <div class="question-arrow">
+          <span class="question">Is video available for some book content?</span>
+          <i class="bx bxs-chevron-down arrow" style="color:#D6AD60"></i>
+        </div>
+        <p>Yes, video is provided in the system so that user can either read or watcgh video and learn.</p>
+        <span class="line" style="background-color:#D6AD60"></span>
+      </li>
+      <li>
+         <div class="question-arrow">
+          <span class="question">Can user update thier information.?</span>
+          <i class="bx bxs-chevron-down arrow" style="color:#D6AD60"></i>
+        </div>
+         <p>Yes, The user can chnage and update thier information .</p>
+        <span class="line" style="background-color:#D6AD60"></span>
+      </li>
+    </ul>
+    </div>
+  </div>
+</div>
+</body>
+  
+
+
+  <script>
+    let li = document.querySelectorAll(".faq-text li");
+    for (var i = 0; i < li.length; i++) {
+      li[i].addEventListener("click", (e)=>{
+        let clickedLi;
+        if(e.target.classList.contains("question-arrow")){
+          clickedLi = e.target.parentElement;
+        }else{
+          clickedLi = e.target.parentElement.parentElement;
+        }
+       clickedLi.classList.toggle("showAnswer");
+      });
+    }
+  </script>
+
+        
+
+
+ <section class="footer">
+   <div class="box-container">
+      <div class="box">
+         <h3> </i> BooKish </h3>
+        
+         <div class="share">
+            <a href="#" class="fab fa-facebook-f"></a>
+            <a href="#" class="fab fa-twitter"></a>
+            <a href="#" class="fab fa-instagram"></a>
+            <a href="#" class="fab fa-linkedin"></a>
+         </div>
+      </div>
+
+      <div class="box">
+         <h3>quick links</h3>
+         <a href="home.html" class="link">Home</a>
+         <a href="about.html" class="link">About us</a>        
+           <a href="index.php" class="link">login</a>
+      </div>
+
+      <div class="box">
+         <h3>useful links</h3>
+         <a href="question.html" class="link">FAQ</a>   
+      </div>
+
+     <div class="contactInfo">
+        <div class="box" style="position: relative;  padding:5px 0;  display: flex;">
+          <div class="icon"style="min-width:10px;  height: 50px;  width:  50px;  background:#D6AD60;  display: flex;  justify-content: center;  align-items: center;  border-radius: 50%;  font-size:22px;" >
+            <i class="fa fa-map-marker" aria-hidden="true" aria-label="map" style="color: #ffff;"></i></div>
+          <div class="text" style="display: flex;  margin-left: 20px;  font-size:19px;  color:black;  flex-direction: column;  font-weight: 300;">
+          <h3 style="font-weight: 500;  color:#ffff;  font-family:poppins;" > Address</h3>
+          <p style="font-size:16px;">15 Road Street,<br>Owatonna,<br>55060</p>
+        </div>
+         </div>
+
+        <div class="box" style="position: relative;  padding:5px 0;  display: flex;">
+          <div class="icon" style="min-width:10px;  height: 50px;  width:  50px;  background:#D6AD60;  display: flex;  justify-content: center;  align-items: center;  border-radius: 50%;  font-size:22px;" ><i class="fa fa-phone" aria-hidden="true" aria-label="phone" style="color: #ffff;"></i></div>
+          <div class="text" style="display: flex;  margin-left: 20px;  font-size:19px;  color:black;  flex-direction: column;  font-weight: 300;">
+          <h3 style="font-weight: 500;  color:#ffff;  font-family:poppins;">Phone</h3>
+          <p style="font-size:16px;margin-top:2px;margin-bottom:5px;"> +977-9813247098,<br>+977-783557373</p>
+        </div>
+      </div>
+
+      <div class="box" style="position: relative;  padding:5px 0;  display: flex;">
+        <div class="icon" style="min-width:10px;  height: 50px;  width:  50px;  background:#D6AD60;  display: flex;  justify-content: center;  align-items: center;  border-radius: 50%;  font-size:22px;">
+          <i class="fa fa-envelope-o" aria-hidden="true" aria-label="envelope" style="color: #ffff;"></i></div>
+          <div class="text" style="display: flex;  margin-left: 20px;  font-size:19px;  color:black;  flex-direction: column;  font-weight: 300;">
+          <h3 style="font-weight: 500;  color:#ffff;  font-family:poppins;">Email</h3>
+          <p style="font-size:16px;margin-top:2px;">BooKishwithu13@gmail.com</p>
+            </div>
+          </div>
+        </div>
+   </div>
+
+   <div class="credit">&copy BooKish. All Right Reserved 2022. </div>
+
+</section>
+
+
+</html>
+

@@ -1,0 +1,224 @@
+<?php
+ob_start();
+require('dbconn.php');
+?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>LMS</title>
+        <link type="text/css" href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link type="text/css" href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+        <link type="text/css" href="css/student3.css" rel="stylesheet">
+         <link type="text/css" href="css/sidebar.css" rel="stylesheet">
+        <link type="text/css" href="images/icons/css/font-awesome.css" rel="stylesheet">
+        <link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600'
+            rel='stylesheet'>
+    </head>
+    <body>
+        <div class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-inverse-collapse">
+                        <i class="icon-reorder shaded"></i></a><a class="brand" href="index.php">BooKish </a>
+                    <div class="nav-collapse collapse navbar-inverse-collapse">
+                        <ul class="nav pull-right">
+                            <li class="nav-user dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <img src="images/0.jpg" class="nav-avatar" />
+                                <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="index.php">Your Profile</a></li>
+                                    <!--li><a href="#">Edit Profile</a></li>
+                                    <li><a href="#">Account Settings</a></li-->
+                                    <li class="divider"></li>
+                                    <li><a href="logout.php">Logout</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                <div class="nav-collapse collapse navbar-inverse-collapse">
+                        <ul class="nav pull-left">
+                            <li class="nav-user dropdown"><a href="index.php"><i class="menu-icon icon-home"></i>Home </a></li>
+                                <li class="nav-user dropdown"><a href="book.php"><i class="menu-icon icon-book"></i> Books </a></li>
+                                <li class="nav-user dropdown"><a href="pdf.php"><i class="menu-icon icon-copy"></i> Reports </a></li>
+                                
+                                <li class="nav-user dropdown"><a href="recommendations.php"><i class="menu-icon icon-list"></i>Recommend Books </a></li>
+                                <li class="nav-user dropdown"><a href="current.php"><i class="menu-icon icon-list"></i>Currently Issued </a></li>
+                                <li class="nav-user dropdown"><a href="message.php"><i class="menu-icon icon-inbox" ></i>Messages</a></li>
+                                <li class="nav-user dropdown"><a href="readfiles.php"><i class="menu-icon icon-camera" ></i>Video</a></li>
+                                <li class="nav-user dropdown"><a href="history.php"><i class="menu-icon icon-tasks"></i>History </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                                <!-- /.nav-collapse -->
+                </div>
+            </div>
+            <!-- /navbar-inner -->
+        </div>
+        <!-- /navbar -->
+        <div class="wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="span3" style="margin-top: 50px;">
+                        <div class="sidebar" >
+                         <div class="user">
+                               <center> <p style="padding-top:15px;">Hello User </p> </center>
+                               <img class="card-img-top" src="images/profile2.png" alt="Card image cap" style="padding-left:7px; padding-top:11px;">
+                            </div>
+                            
+                        </div>
+                        <!--/.sidebar-->
+                    </div>
+                    <!--/.span3-->
+                    <div class="span9" style="margin-top: 50px;">
+                        <div class="module">
+                            <div class="module-head">
+                                <h3>Update Your Information.</h3>
+                            </div>
+                            <div class="module-body">
+
+
+                                <?php
+                                $pin = $_SESSION['Pin'];
+                                $sql="select * from LMS.user where Pin='$pin'";
+                                $result=$conn->query($sql);
+                                $row=$result->fetch_assoc();
+
+                                $name=$row['Name'];
+                               
+                                $email=$row['EmailId'];
+                                $mobno=$row['MobNo'];
+                                $pswd=$row['Password'];
+                                ?>    
+                    			
+                                <form class="form-horizontal row-fluid" action="edit_student_details.php?id=<?php echo $pin ?>" method="post">
+
+                                    <div class="control-group">
+                                        <label class="control-label" for="Name"><b>Name:</b></label>
+                                        <div class="controls">
+                                            <input type="text" id="Name" name="Name" value= "<?php echo $name?>" class="span8" required>
+                                        </div>
+                                    </div>
+
+
+
+
+                                    <div class="control-group">
+                                        <label class="control-label" for="EmailId"><b>Email Id:</b></label>
+                                        <div class="controls">
+                                            <input type="text" id="EmailId" name="EmailId" value= "<?php echo $email?>" class="span8" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="control-group">
+                                        <label class="control-label" for="MobNo"><b>Mobile Number:</b></label>
+                                        <div class="controls">
+                                            <input type="text" id="MobNo" name="MobNo" value= "<?php echo $mobno?>" class="span8" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="control-group">
+                                        <label class="control-label" for="Password"><b>New Password:</b></label>
+                                        <div class="controls">
+                                            <input type="password" id="Password" name="Password"  value= "<?php echo $pswd?>" class="span8" required>
+                                        </div>
+                                    </div>   
+
+                                    <div class="control-group">
+                                            <div class="controls">
+                                                <button type="submit" name="submit"class="btn-primary"><center>Update Details</center></button>
+                                            </div>
+                                      </div>                                                                
+                              </form>                           
+                        </div>
+                   </div> 	
+               </div>                    
+                    <!--/.span9-->
+                </div>
+            </div>
+            <!--/.container-->
+        </div>
+
+      
+
+
+
+ <div class="services-section">
+  <div class="inner-width">
+    <h1 class="section-title">Why is it important to update your password regularly?</h1>
+    
+    <div class="service-container">
+      <div class="service-box">
+        
+        <div class="service-title"> Stops hackers.</div>
+        <div class="service-desc">
+          changing your password will prevent hackers from accessing your account. Updating your account password at the first sign of an attack limits damage. he stronger your password, the more protected your computer will be from hackers and malicious software. You should maintain strong passwords for all accounts on your computer. Changing your password regularly also improves security. Stolen credentials in data breaches are often old.
+      </div>
+    </div>
+    <div class="line"></div>
+
+    <div class="service-box" style="padding-left:100px;">       
+        <div class="service-title">Change password Frequently.</div>
+        <div class="service-desc">
+          IT experts recommend that people should update their passwords after every three months. However, if you know you've been a victim of a cyber attack, you should change immediately. The intention is to ensure that if a password is compromised, a cybercriminal will only remain inside the hacked account for a short time. So change your information in every two to three months to save from hackers and secure your account.
+      </div>
+    </div>
+
+  
+</div>
+</div>
+</div>
+
+
+
+
+<div class="footer">
+            <div class="container">
+                <center> <b class="copyright">&copy; 2022 Library Management System </b>All rights reserved.</center>
+            </div>
+        </div>
+        
+        <!--/.wrapper-->
+        <script src="scripts/jquery-1.9.1.min.js" type="text/javascript"></script>
+        <script src="scripts/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
+        <script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="scripts/flot/jquery.flot.js" type="text/javascript"></script>
+        <script src="scripts/flot/jquery.flot.resize.js" type="text/javascript"></script>
+        <script src="scripts/datatables/jquery.dataTables.js" type="text/javascript"></script>
+        <script src="scripts/common.js" type="text/javascript"></script>
+
+<?php
+if(isset($_POST['submit']))
+{
+    $pin = $_GET['id'];
+    $name=$_POST['Name'];
+   
+    $email=$_POST['EmailId'];
+    $mobno=$_POST['MobNo'];
+    $pswd=$_POST['Password'];
+
+$sql1="update LMS.user set Name='$name', EmailId='$email', MobNo='$mobno', Password='$pswd' where Pin='$pin'";
+
+
+
+if($conn->query($sql1) === TRUE){
+echo "<script type='text/javascript'>alert('Your Profile is successfully updated.')</script>";
+header( "Refresh:0.01; url=index.php", true, 303);
+}
+else
+{//echo $conn->error;
+echo "<script type='text/javascript'>alert('Error')</script>";
+}
+}
+?>
+      
+    </body>
+
+</html>
